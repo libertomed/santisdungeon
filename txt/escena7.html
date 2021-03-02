@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <style>
+      @import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
+      #text {
+        font-size: 100%;
+        font-family: 'Press Start 2P', cursive;
+        line-height : 150%;   
+        color: white;
+        padding-left: 2%;
+        padding-right: 2%;
+      }
+  </style>
+
+
+</head>
+<body>
+  <div> <p id="text"> </p></div>
+  <script>
+    let string = 'Te lo advertí, ahora te  toca escuchar una buena reflección :) :             Cada persona es peculiar y se apoya en lo que cree que es mejor y más útil para desarrollar su vida y dar sentido a su existencia. Los problemas que surgen día a día son, en su mayoría, inevitables por lo que hay vivir de forma que tengamos valor y fuerza suficiente para superarlos sin decaer y tratando a las personas con la dignidad y el respeto que se merecen. Cuando pensamos que el mundo está sobre nosotros y no hay forma de soportar tanto dilema, debemos darnos cuenta de que podemos con eso y mucho más, que hay personas en todo el mundo que luchan contra conflictos mayores y si ellos pueden, nosotros también.'+
+    '                                              Si ahora se me planteara la cuestión “¿por que vivir?” sabría dar muchas razones; pero a pesar de todo mi respuesta sería sin lugar a dudas: '+
+    '                                                              ¿y por qué no?';
+    let array = string.split("");
+    let timer;
+
+  function frameLooper () {
+  if (array.length > 0) {
+    document.getElementById("text").innerHTML += array.shift();
+  } else {
+    clearTimeout(timer);
+      }
+  loopTimer = setTimeout('frameLooper()',70); /* change 70 for speed */
+
+  }
+  frameLooper();
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <style>
+      @import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
+      #text {
+        font-size: 100%;
+        font-family: 'Press Start 2P', cursive;
+        line-height : 150%;   
+        color: white;
+        padding-left: 2%;
+        padding-right: 2%;
+      }
+  </style>
+
+
+</head>
+<body>
+  <div> <p id="text"> </p></div>
+  <script>
+    let string = '"Gracias por ayudarme forastero.                 Tenemos una plaga de topos y sabemos que su nido esta en el jardin central,                   ten, te presto mi arma pequeña, mucha suerte. ven a buscarme cuando hayas acabados con todos ellos de la forma más sanguinaria posible...                   Suerte..."     '+
+    '   Pues eso.... haz lo que te dice y rapidito...                                             !Ah y si ves a Santi, dale con el martillo a ver si así consigue ver a los pokemon de Antony JAJA';
+    let array = string.split("");
+    let timer;
+
+  function frameLooper () {
+  if (array.length > 0) {
+    document.getElementById("text").innerHTML += array.shift();
+  } else {
+    clearTimeout(timer);
+      }
+  loopTimer = setTimeout('frameLooper()',70); /* change 70 for speed */
+
+  }
+  frameLooper();
+  let cont=0;
+  for (let i = 0; i < array.length; i++) {
+    cont++;
+  }
+
+  loopTimer = setTimeout(()=>{
+    alert("ARMA AÑADIDA : Mjölnir ");
+    alert(" PODER ADQUIRIDO: Dios del Trueno");
+  }, cont*74);
+  </script>
+</body>
+</html>
+

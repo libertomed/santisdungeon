@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <style>
+      @import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
+      #text {
+        font-size: 100%;
+        font-family: 'Press Start 2P', cursive;
+        line-height : 150%;   
+        color: white;
+        padding-left: 2%;
+        padding-right: 2%;
+      }
+  </style>
+
+
+</head>
+<body>
+  <div> <p id="text"> </p></div>
+  <script>
+    let string = 'Llevas unos 10 minutos andando por el pasillo y ya estas cansado...               Deberias haber hecho caso al profe de gimnasia'+
+    ' hay que correr más y comer menos bollicao.....                Pero bueno, para tu suerte has llegado a un lugar colorido y gigantesco,'+
+    '  donde hay un cartel enorme del que solo entiendes "AZGAAR",                                    parece que los carteles estaban mal...           '+
+    '         Mientras avanzas, más impresionado estás,               es todo una maravilla y...                         derepente...              '+
+    'A lo lejos escuchas un grito...                          "ADBJHGOHHHHHH"                         Claro,                    ellos hablan otra lengua'+
+    '                       y no te voy a tradur eso, mucho dialogo ya,               te acercas a mirar y para tu sorpresa es ...             '+
+    '                               THOR, que parece estar pidiendo ayuda.';
+    let array = string.split("");
+    let timer;
+
+  function frameLooper () {
+  if (array.length > 0) {
+    document.getElementById("text").innerHTML += array.shift();
+  } else {
+    clearTimeout(timer);
+      }
+  loopTimer = setTimeout('frameLooper()',70); /* change 70 for speed */
+
+  }
+  frameLooper();
+
+  </script>
+</body>
+</html>
+

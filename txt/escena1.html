@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <style>
+      @import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
+      #text {
+        font-size: 100%;
+        font-family: 'Press Start 2P', cursive;
+        line-height : 150%;   
+        color: white;
+        padding-left: 2%;
+        padding-right: 2%;
+      }
+  </style>
+
+
+</head>
+<body>
+  <div> <p id="text"> </p></div>
+  <script>
+    var string = "¡Bienvenidos a la mazmorra de Santi! (TAN, TAAN, TAAAN)              El lugar más tenebroso del Universo. " +
+    '                  Santi es El Guardián, eso significa que no te va a dejar salir tan fácilmente de este sitio... ' + 
+    '               Para poder salir deberás pasar una serie de pruebas.                               ¿ESTÁS PREPARADO?';
+    var array = string.split("");
+    var timer;
+
+function frameLooper () {
+if (array.length > 0) {
+  document.getElementById("text").innerHTML += array.shift();
+} else {
+  clearTimeout(timer);
+    }
+loopTimer = setTimeout('frameLooper()',70); /* change 70 for speed */
+
+}
+frameLooper();
+
+  </script>
+</body>
+</html>
+

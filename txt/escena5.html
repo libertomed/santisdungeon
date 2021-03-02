@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <style>
+      @import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
+      #text {
+        font-size: 100%;
+        font-family: 'Press Start 2P', cursive;
+        line-height : 150%;   
+        color: white;
+        padding-left: 2%;
+        padding-right: 2%;
+      }
+  </style>
+
+
+</head>
+<body>
+  <div> <p id="text"> </p></div>
+  <script>
+    let string = 'Te acercas más y te dice "AHGAUYG SHGDF"               '+
+    'y claro, tu como no entiendes ni j,  pues ni idea.                                 Pero el se da cuenta de que no eres de aqui y te dice'+
+    '"Necesito ayuda, hay una plaga aqui y estamos fatal, si me ayudas te enseñaré la salida, por las pintas que llevas, no estas aqui por gusto..."'+
+    '                             ¿Que me dices?';
+    let array = string.split("");
+    let timer;
+
+  function frameLooper () {
+  if (array.length > 0) {
+    document.getElementById("text").innerHTML += array.shift();
+  } else {
+    clearTimeout(timer);
+      }
+  loopTimer = setTimeout('frameLooper()',70); /* change 70 for speed */
+
+  }
+  frameLooper();
+
+  </script>
+</body>
+</html>
+

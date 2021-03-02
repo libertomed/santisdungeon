@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <style>
+      @import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
+      #text {
+        font-size: 100%;
+        font-family: 'Press Start 2P', cursive;
+        line-height : 150%;   
+        color: white;
+        padding-left: 2%;
+        padding-right: 2%;
+      }
+  </style>
+
+
+</head>
+<body>
+  <div> <p id="text"> </p></div>
+  <script>
+    var string = 'A Santi le da igual si tu quieres jugar o no,                  tú juegas y punto.'+ 
+    '                    Además, había que hacer una escena de presentación del dichoso juego...                '+ ' En fin, ya has entrado hasta el fondo de la mazmorra de Santi '+
+    '(TAN, TAAN, TAAANNN).              Vaya, qué mal a sonado eso...    Je,            bueno, esto es lo que pasa cuando le das libertad a un alumno amargado, para hacer los comentarios,' +
+    '                   nada bueno puede salir de aqui...            Por desgracia para ti, has entrado en un laberinto. Si te quedas aquí, morirás;    si avanzas, podrías salvarte...     '+
+    '            ¿QUÉ HACES?';
+    var array = string.split("");
+    var timer;
+
+function frameLooper () {
+if (array.length > 0) {
+  document.getElementById("text").innerHTML += array.shift();
+} else {
+  clearTimeout(timer);
+    }
+loopTimer = setTimeout('frameLooper()',70); /* change 70 for speed */
+
+}
+frameLooper();
+  </script>
+</body>
+</html>
+

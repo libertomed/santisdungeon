@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <style>
+      @import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
+      #text {
+        font-size: 100%;
+        font-family: 'Press Start 2P', cursive;
+        line-height : 150%;   
+        color: white;
+        padding-left: 2%;
+        padding-right: 2%;
+      }
+  </style>
+
+
+</head>
+<body>
+  <div> <p id="text"> </p></div>
+  <script>
+    let string = 'Como ya te he dicho antes, a Santi le da igual lo que quieras...       Aquí se hace lo que él manda...'+
+    '                  Así que has entrado en el laberinto.         Tranquilo, la imagen es solo de relleno, no te creerás,'+
+    'que me voy a pasar todo el fin de semana haciendo la ruta por ese pedazo de laberinto, ¿no?                Como si no tuviera bastante con los diálogos...'+
+    '                             Mientras te he estado contando esto has avanzado por el laberinto y has llegado a un cruce con dos carteles,'+
+    '                     Derecha: "El Castillo de Mordekaiser";       Izquierad: "El Jardin del eden".                    ¿DONDE VAS?';
+    let array = string.split("");
+    let timer;
+
+  function frameLooper () {
+  if (array.length > 0) {
+    document.getElementById("text").innerHTML += array.shift();
+  } else {
+    clearTimeout(timer);
+      }
+  loopTimer = setTimeout('frameLooper()',70); /* change 70 for speed */
+
+  }
+  frameLooper();
+
+  </script>
+</body>
+</html>
+
